@@ -11,8 +11,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   $stateProvider
     .state('index', {
       url: "/index",
-      templateUrl: 'templates/start.html',
-      controller: 'StartController'
+      templateUrl: 'templates/menu.html',
+      controller: 'MenuController'
+  })
+
+    .state('play', {
+      url: "/play",
+      templateUrl: 'templates/play.html',
+      controller: 'PlayController'
+  })
+
+    .state('map', {
+      url: "/map",
+      templateUrl: 'templates/map.html',
+      controller: 'MapController'
   })
 
   .state('level3', {

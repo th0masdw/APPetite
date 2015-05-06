@@ -1,6 +1,15 @@
 var myApp = angular.module('starter.controllers', ['ngCordova', 'ionic' ]);
 
-myApp.controller('StartController', function($scope, $cordovaBarcodeScanner,$location) {
+myApp.controller('MenuController', function($scope, $location) {
+    $scope.play = function(path) {
+        $location.path( path );
+    };
+    $scope.map = function(path) {
+        $location.path( path );
+    };
+});
+
+myApp.controller('PlayController', function($scope, $cordovaBarcodeScanner,$location) {
 	$scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
@@ -180,4 +189,8 @@ var mainState = {
 game.state.add('main', mainState);
 game.state.start('main');
 
+});
+
+myApp.controller('MapController', function($scope, $location) {
+    alert('in map controller');
 });
