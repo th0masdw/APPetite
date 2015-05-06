@@ -1,6 +1,13 @@
 /* Empty. Add your own CSS if you like */
 .center{
 	text-align: center;
-	margin-top: 15%;
-	margin-bottom: 7,5%;
+	margin-bottom: 20%;
+	padding-top: 15%;
 }
+.bg{
+	background: url("../img/vraag3.jpg;") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+}
+

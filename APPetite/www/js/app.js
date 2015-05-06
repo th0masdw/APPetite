@@ -27,6 +27,38 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
       controller: 'MapController'
   })
 
+     .state('scores', {
+      url: "/scores",
+      templateUrl: 'templates/scores.html',
+      controller: 'scoresController'
+  })
+    .state('options', {
+      url: "/options",
+      templateUrl: 'templates/options.html',
+      controller: 'optionsController'
+  })
+
+  .state('characters', {
+    url: "/characters",
+    templateUrl: 'templates/characters.html'  
+  })
+
+  .state('languages', {
+    url: "/languages",
+    templateUrl: 'templates/languages.html'  
+  })
+
+  .state('credits', {
+    url: "/credits",
+    templateUrl: 'templates/credits.html'  
+  })
+
+  .state('awards', {
+      url: "/awards",
+      templateUrl: 'templates/awards.html'
+  })
+
+
   .state('level3', {
       url: "/level3",
       templateUrl: 'templates/level3.html',

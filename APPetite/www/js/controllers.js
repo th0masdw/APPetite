@@ -7,6 +7,9 @@ myApp.controller('MenuController', function($scope, $location) {
     $scope.map = function(path) {
         $location.path( path );
     };
+    $scope.close = function() {
+        navigator.app.exitApp();
+    }
 });
 
 myApp.controller('PlayController', function($scope, $cordovaBarcodeScanner,$location) {
@@ -273,4 +276,15 @@ myApp.controller('MapController', function($scope) {
     });
     $scope.map.on('zoomend', function(e) {
     });
+})
+
+myApp.controller('optionsController', function($scope,$location) {
+   $scope.go = function(path) {
+        $location.path( path );
+    };
+})
+myApp.controller('scoresController', function($scope,$location) {
+   $scope.go = function(path) {
+        $location.path( path );
+    };
 })
