@@ -14,4 +14,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       templateUrl: 'templates/start.html',
       controller: 'StartController'
   })
+
+  .state('level1', {
+      url: "/level1",
+      templateUrl: 'templates/level1.html',
+      controller: 'Level1Controller'
+  })
 });

@@ -51,3 +51,7 @@ myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
         });
     };
 });
+
+myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
+    
+});
