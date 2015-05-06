@@ -61,7 +61,6 @@ myApp.controller('PlayController', function($scope, $cordovaBarcodeScanner,$loca
     };
 
     $scope.go = function ( path ) {
-        alert(path);
         $location.path( path );
     };
 });
@@ -79,7 +78,7 @@ myApp.controller('Level3Controller', function($scope, $cordovaBarcodeScanner,$lo
     
 });
 myApp.controller('game3Controller', function($scope, $cordovaBarcodeScanner,$location) {
-    var game = new Phaser.Game(400, 490, Phaser.AUTO, 'gameDiv');
+    var game = new Phaser.Game(400, 500, Phaser.AUTO, 'gameDiv');
 
 var mainState = {
 
