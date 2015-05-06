@@ -15,9 +15,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       controller: 'StartController'
   })
 
-  .state('level1', {
-      url: "/level1",
-      templateUrl: 'templates/level1.html',
-      controller: 'Level1Controller'
+  .state('level3', {
+      url: "/level3",
+      templateUrl: 'templates/level3.html',
+      controller: 'Level3Controller'
   })
+
+  .state('game3', {
+      url: "/game3",
+      templateUrl: 'templates/game3.html',
+      controller: 'game3Controller'
+  })
+
 });

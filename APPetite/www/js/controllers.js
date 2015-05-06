@@ -1,6 +1,6 @@
 var myApp = angular.module('starter.controllers', ['ngCordova', 'ionic' ]);
 
-myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
+myApp.controller('StartController', function($scope, $cordovaBarcodeScanner,$location) {
 	$scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
@@ -50,8 +50,25 @@ myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
             console.log("An error happened -> " + error);
         });
     };
+
+    $scope.go = function ( path ) {
+        alert(path);
+        $location.path( path );
+    };
 });
 
-myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
+myApp.controller('Level3Controller', function($scope, $cordovaBarcodeScanner,$location) {
+    $scope.good = function(path)
+    {
+        alert("Succes you're a genius!!");
+        $location.path( path );
+    };
+    $scope.wrong = function()
+    {
+        alert("please,try again");
+    };
+    
+});
+myApp.controller('game3Controller', function($scope, $cordovaBarcodeScanner,$location) {
     
 });
