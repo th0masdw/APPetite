@@ -86,13 +86,15 @@ var mainState = {
     preload: function() {
         game.stage.backgroundColor = '#71c5cf';
 
-        game.load.image('bird', 'assets/bird.png');
-        game.load.image('pipe', 'assets/pipe.png');
+        game.load.image('bird', 'assets/frie.png');
+        game.load.image('pipe', 'assets/fork.png');
 
         // Load the jump sound
         game.load.audio('jump', 'assets/jump.wav');
 
         game.load.image('jumpbutton', 'assets/jump.png');
+
+
     },
 
     create: function() {
@@ -117,7 +119,50 @@ var mainState = {
 
         // Add the jump sound
         this.jumpSound = this.game.add.audio('jump');
+
+
+        this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        this.scale.minWidth = this.game.width / 2;
+        this.scale.minHeight = this.game.height / 2;
+        this.scale.pageAlignHorizontally = false;
+        this.scale.pageAlignVertically = true;
+        if (this.game.device.desktop)
+        {
+            this.scale.maxWidth = this.game.width;
+            this.scale.maxHeight = this.game.height;
+            this.scale.setScreenSize(true);
+        }
+        else
+        {
+            this.scale.maxWidth = this.game.width * 2.5;
+            this.scale.maxHeight = this.game.height * 2.5;
+            this.scale.forceOrientation(false, true);
+            this.scale.hasResized.add(this.gameResized, this);
+            this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
+            this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
+            this.scale.setScreenSize(true);
+        }
+        this.scale.refresh();
+
     },
+
+    enterIncorrectOrientation: function () {
+
+        BasicGame.orientated = false;
+
+        document.getElementById('orientation').style.display = 'block';
+
+    },
+
+    leaveIncorrectOrientation: function () {
+
+        BasicGame.orientated = true;
+
+        document.getElementById('orientation').style.display = 'none';
+        this.scale.setScreenSize(true);
+
+    },
+
 
     update: function() {
         if (this.bird.inWorld == false)
@@ -185,10 +230,8 @@ var mainState = {
         this.labelScore.text = this.score;
     },
 };
-
 game.state.add('main', mainState);
 game.state.start('main');
-
 });
 
 myApp.controller('MapController', function($scope) {
