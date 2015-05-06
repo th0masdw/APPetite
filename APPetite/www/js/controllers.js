@@ -198,7 +198,7 @@ myApp.controller('MapController', function($scope) {
     var center = {}; 
     center.lat = 51.22894;     //MAS Museum
     center.lng = 4.405197;
-    zoom = 12;
+    zoom = 15;
     
     //$scope.map = new L.Map('map');
     $scope.map = new L.map('map', {
@@ -218,10 +218,8 @@ myApp.controller('MapController', function($scope) {
     L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {}).addTo($scope.map);
     $scope.map.attributionControl.setPrefix('');
 
-    // normal click
-    $scope.map.on('click', function(e){
-        addMarker(e);
-    });
+    var marker = L.marker([51.22894, 4.405197]).addTo($scope.map);
+    marker.bindPopup("<b>MAS Museum</b>").openPopup();
 
     // double click
     // $scope.map.on('dblclick', function(event, locationEvent){ });
@@ -233,24 +231,4 @@ myApp.controller('MapController', function($scope) {
     });
     $scope.map.on('zoomend', function(e) {
     });
-    
-    addMarker = function(e) {
-        /*var lat = e.latlng.lat;
-        var lng = e.latlng.lng;
-
-        AddressService.getAddress(lat, lng).then(function(data) {
-            if(data.address.neighbourhood != undefined && tariff != undefined) {
-                var tarief = TariffService.getTariffText(tariff);
-                popup.setLatLng(e.latlng).setContent(data.address.neighbourhood + ' : ' + tarief).openOn($scope.map);
-            }
-            else if(data.address.city_district != undefined && tariff != undefined) {
-                var tarief = TariffService.getTariffText(tariff);
-                popup.setLatLng(e.latlng).setContent(data.address.city_district + ' : ' + tarief).openOn($scope.map);
-            }
-            else {
-                popup.setLatLng(e.latlng).setContent('Geen tarief').openOn($scope.map);
-            }
-        });*/
-        alert("YOU CAN'T ADD A MARKER YET, NERD!");
-    };
 })
