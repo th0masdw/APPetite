@@ -70,5 +70,5 @@ myApp.controller('Level3Controller', function($scope, $cordovaBarcodeScanner,$lo
     
 });
 myApp.controller('game3Controller', function($scope, $cordovaBarcodeScanner,$location) {
-    
+
 });
