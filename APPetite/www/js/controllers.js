@@ -1,7 +1,8 @@
-var myApp = angular.module('starter.controllers', [ 'ui.router', 'ngCordova', 'ionic' ]);
+var myApp = angular.module('starter.controllers', ['ngCordova', 'ionic' ]);
 
 myApp.controller('StartController', function($scope, $cordovaBarcodeScanner) {
 	$scope.scanBarcode = function() {
+		alert("geklikt");
         $cordovaBarcodeScanner.scan().then(function(imageData) {
             alert(imageData.text);
             console.log("Barcode Format -> " + imageData.format);
