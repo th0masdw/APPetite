@@ -258,11 +258,11 @@ myApp.controller('MapController', function($scope) {
     $scope.map.attributionControl.setPrefix('');
 
     var m1 = L.marker([51.22894, 4.405197]).addTo($scope.map);   //MAS Museum
-    m1.on('click', function(e) {
+    /*m1.on('click', function(e) {*/
         m1.bindPopup("<b>MAS Museum</b>").openPopup();
-    });
+    /*});*/
 
-    var m2 = L.marker([51.229671, 4.402016]).addTo($scope.map);   //Bonapartesluis
+    /*var m2 = L.marker([51.229671, 4.402016]).addTo($scope.map);   //Bonapartesluis
     m2.on('click', function(e) {
         m2.bindPopup("<b>Bonaparte sluis</b>").openPopup();
     });
@@ -285,7 +285,7 @@ myApp.controller('MapController', function($scope) {
     var m6 = L.marker([51.214125, 4.409315]).addTo($scope.map);   //Oude Vaartplaats
     m6.on('click', function(e) {
         m6.bindPopup("<b>Oude Vaartplaats</b>").openPopup();
-    });
+    });*/
 
     // double click
     // $scope.map.on('dblclick', function(event, locationEvent){ });
