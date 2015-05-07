@@ -71,4 +71,9 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
       controller: 'game3Controller'
   })
 
+      .state('wrong', {
+      url: "/wrong",
+      templateUrl: 'templates/wrong.html'
+  })
+
 });
